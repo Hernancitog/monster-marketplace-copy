@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+
+<br><br>
+
+<div class="container color-dark">
+  <h2>  Welcome! </h2>
+  <br>
+  <div class="col">
+    <p>Shop by Category</p>
+  </div>
+</div>
+
+<div class="container color-light">
+  <div class="col">
+
+
+    <nav class="product-filter">
+
+      <div class="sort">
+        <div class="collection-sort">
+          <!------------------------------->
+          <br>
+          <select (change)="selected($event.target.value)" id="state" >
+            <option value="" selected disabled hidden>Select Category</option>
+            <option value="0">All Categories</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+          </select>
+          <br>
+        </div>
+      </div>
+
+    </nav>
+    <br>
+
+    <section class="products">
+
+      <div class="product-card "*ngFor="let product of currentProducts">
+        <div class="product-image">
+          <img src="{{product.urlImage}}" width="100" height="100" >
+        </div>
+        <div class="product-info">
+          <a routerLink="/product/{{product.id}}">
+            <h4>{{product.title}}</h4>
+            <h5>{{product.price | currency}}</h5>
+            <h5>{{product.seller.email}}</h5>
+          </a>
+
+        </div>
+
+        <!--<a routerLink="/product/{{product.id}}">-->
+        <!--<span class="badge">ID: {{product.id}} </span>-->
+        <!--from {{product.seller.firstName}} & catID: {{product.urlImage}}-->
+        <!--</a>-->
+      </div>
+    </section>
+
+  </div>
+</div>

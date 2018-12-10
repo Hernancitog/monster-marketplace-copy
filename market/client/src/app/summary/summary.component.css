@@ -1,0 +1,109 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(9, 57, 85);
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(7, 54, 92);
+}
+
+.active {
+  background-color: rgb(54, 99, 150);
+}
+
+
+.product-filter {
+  display: flex;
+}
+
+.product-filter h1 {
+  flex-grow: 1;
+}
+
+.sort {
+  display: block;
+}
+
+.collection-sort {
+  display: flex;
+  flex-direction: column;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  padding: 2%;
+  flex-grow: 1;
+  flex-basis: 16%;
+  display: block;
+
+//display: flex; /* so child elements can use flexbox stuff too! */
+}
+
+.product-image img {
+  max-width: 100%;
+}
+
+.product-info {
+  margin-top: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50% auto;
+}
+.col {
+  padding: .4em 1.3em;
+}
+.color-dark {
+  background: #2885C4;
+}
+.color-light {
+  background: #57B3F1;
+}
+
+input.txt {
+  border: 0;
+  padding: 1em;
+  width: 80%;
+  margin-bottom: 2em;
+}
+input.btn {
+  border: 0;
+  display:block;
+  padding:1em 3em;
+  background:#A5F883;
+  color:#003A61;
+  margin-bottom:1em;
+  cursor:pointer;
+}
+.life-container {
+  background:#3FA0E1;
+
+  padding:.5em;
+  font-weight:bold;
+  cursor:pointer;
+}

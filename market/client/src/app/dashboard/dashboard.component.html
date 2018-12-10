@@ -1,0 +1,9 @@
+<h3>Popular Listings</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let listing of listings" class="col-1-4"
+      routerLink="/listing/{{listing.id}}">
+    <div class="module hero">
+      <h4>{{listing.name}}</h4>
+    </div>
+  </a>
+</div>

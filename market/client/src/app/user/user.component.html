@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+
+<section>
+  <div *ngIf="currentMember">
+      <span class="badge">ID: {{currentMember.id}} </span>
+    <br>
+    First Name: {{currentMember.firstName}}
+    <br>
+    Last Name: {{currentMember.lastName}}
+    <br>
+    Email: {{currentMember.email}}
+      <!--{{product.price | currency}} from {{product.seller.firstName}} & catID: {{product.urlImage}}-->
+  </div>
+</section>
+
+<button class="pure-button pure-button-primary" (click)="goBack()">Back</button>

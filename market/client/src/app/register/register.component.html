@@ -1,0 +1,47 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <h1>Register </h1>
+    <form (ngSumbit)="registerMember()" #newMemberForm="ngForm">
+
+      <div class="form-group">
+        <label for="firstname">Firstname:</label>
+        <br>
+        <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="newMember.firstName" #firstName="ngModel">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="lastname">Lastname:</label>
+        <br>
+        <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="newMember.lastName" #lastName="ngModel">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <br>
+        <input type="text" class="form-control" id="email" name="email" [(ngModel)]="newMember.email" #email="ngModel">
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="username">Create a Username:</label>
+        <br>
+        <input type="text" class="form-control" id="username" name="username" [(ngModel)]="newMember.username" #username="ngModel">
+      </div>
+
+      <br>
+      <div class="form-group">
+        <label for="pwd">Create a Password:</label>
+        <br>
+        <input type="password" class="form-control" id="pwd" name="password" [(ngModel)]="newMember.password" #password="ngModel">
+      </div>
+
+      <br>
+      <button type="submit" class="pure-button pure-button-primary" (click)="registerMember()">Register</button>
+
+    </form>
+
+    <button (click)="goBack()">Cancel</button>
+
+  </div>
+</div>

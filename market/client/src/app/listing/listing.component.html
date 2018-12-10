@@ -1,0 +1,20 @@
+<button (click)="getProduct()">Get this Product!</button>
+<div>
+  <input type="text" placeholder="product id" (keyup)="onNameKeyUp($event)">
+</div>
+
+<h2>Available Listings</h2>
+<div>
+  <ul class = "listItem">
+    <li *ngFor="let listing of currentListings">
+      <a routerLink="/listing/{{listing.id}}">
+      <span class="badge">ID: {{listing.id}} </span>{{listing.name}}
+      {{listing.price | currency}} from {{listing.seller}}
+      </a>
+    </li>
+  </ul>
+  <!--<label>Listing:-->
+    <!--<input [(ngModel)] = "item.name" placeholder="name">-->
+  <!--</label>-->
+  <!--id: {{item.id}}-->
+</div>

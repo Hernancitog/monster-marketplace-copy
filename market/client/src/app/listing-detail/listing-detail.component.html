@@ -1,0 +1,18 @@
+<h2>Selected Listing</h2>
+
+<div *ngIf="listing">
+  <div><span>id: </span>{{listing.id}}</div>
+  <div>
+    <label>item:
+      <input [(ngModel)] = "listing.name" placeholder="name">
+    </label>
+  </div>
+</div>
+
+
+<div *ngIf="!listing">
+  <p>Not a valid Listing ID</p>
+</div>
+
+<!--<button (click)="goBack()">Back</button>-->
+<button class="pure-button pure-button-primary" (click)="goBack()">Back</button>
