@@ -8,25 +8,25 @@ import { HttpClient, HttpHeaders} from "@angular/common/http";
 })
 export class ProductService {
   getProducts(): Observable<Product[]>{
-    return this.http.get<Product[]>('https://market.cfapps.io/product-api/');
+    return this.http.get<Product[]>('https://monster-marketplace-copy.cfapps.io/product-api/');
   }
 
   getProductById(id: number): Observable<Product>{
-    return this.http.get<Product>('https://market.cfapps.io/product-api/product/' + id);
+    return this.http.get<Product>('https://monster-marketplace-copy.cfapps.io/product-api/product/' + id);
 
   }
 
   getProductsByMember(id: number): Observable<Product[]>{
-    return this.http.get<Product[]>('https://market.cfapps.io/product-api/product/seller/' + id);
+    return this.http.get<Product[]>('https://monster-marketplace-copy.cfapps.io/product-api/product/seller/' + id);
 
   }
 
   addProduct(item: Product):Observable<Object>{
-    return this.http.post('https://market.cfapps.io/product-api/product',item);
+    return this.http.post('https://monster-marketplace-copy.cfapps.io/product-api/product',item);
   }
 
   getProductsByCategory(id: number): Observable<Product[]>{
-    return this.http.get<Product[]>('https://market.cfapps.io/product-api/product/category/' + id);
+    return this.http.get<Product[]>('https://monster-marketplace-copy.cfapps.io/product-api/product/category/' + id);
 }
 
   constructor(private http: HttpClient) { }
