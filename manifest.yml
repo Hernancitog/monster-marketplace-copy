@@ -3,5 +3,5 @@ applications:
 - name: monster-marketplace-copy
   path: market/target/market-0.0.1-SNAPSHOT.jar
   domain: cfapps.io
-  memory: 512m
+  memory: 750m
   instances: 1
