@@ -1,6 +1,6 @@
 ---
 applications:
-	name: spring-boot-tech-primers
+-	name: spring-boot-tech-primers
 	path: target/spring-boot.jar
 	domain: cfapps.io
 	memory: 512m
