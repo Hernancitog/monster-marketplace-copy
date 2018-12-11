@@ -318,7 +318,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var AppComponent = /** @class */ (function () {
     function AppComponent(httpClient) {
         this.httpClient = httpClient;
-        this.title = 'your CAMPUS MARKETPLACE';
+        this.title = 'your CAMPUS MARKETPLACE!!!';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
