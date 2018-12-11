@@ -8,11 +8,11 @@ import { HttpClient, HttpHeaders} from "@angular/common/http";
 })
 export class MemberService {
   getMemberById(id: number): Observable<Member>{
-    return this.http.get<Member>('https://market.cfapps.io/product-api/member/' + id);
+    return this.http.get<Member>('https://monster-marketplace-copy.cfapps.io/product-api/member/' + id);
   }
 
   registerMember(member: Member): Observable<Object>{
-    return this.http.post('https://market.cfapps.io/product-api/member/', member);
+    return this.http.post('https://monster-marketplace-copy.cfapps.io/product-api/member/', member);
   }
 
 
