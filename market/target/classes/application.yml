@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: howajos
+    password: password
+    url: jdbc:postgresql://class-1809-josh.caxdbxzes4ws.us-east-1.rds.amazonaws.com:5432/postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: update # 'create' for first time, else 'update'
