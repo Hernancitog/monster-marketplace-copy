@@ -461,7 +461,7 @@ var CategoryService = /** @class */ (function () {
         this.http = http;
     }
     CategoryService.prototype.getCategories = function () {
-        return this.http.get('http://monster-marketplace-copy.cfapps.io/product-api/categories');
+        return this.http.get('https://monster-marketplace-copy.cfapps.io/product-api/categories');
     };
     CategoryService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -976,7 +976,7 @@ var ListingService = /** @class */ (function () {
         this.http = http;
     }
     ListingService.prototype.getListings = function () {
-        return this.http.get('http://monster-marketplace-copy.cfapps.io/product-api/allListings');
+        return this.http.get('https://monster-marketplace-copy.cfapps.io/product-api/allListings');
     };
     ListingService.prototype.addListing = function (item) {
         // return this.http.post(url, item);
@@ -984,7 +984,7 @@ var ListingService = /** @class */ (function () {
     ListingService.prototype.getListing = function (id) {
         console.log("fetched listing id = " + id);
         // return of(Listings.find(listing => listing.id === id) );
-        return this.http.get("http://monster-marketplace-copy.cfapps.io/product-api/listing/" + id);
+        return this.http.get("https://monster-marketplace-copy.cfapps.io/product-api/listing/" + id);
     };
     ListingService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

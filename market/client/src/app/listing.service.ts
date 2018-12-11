@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders} from "@angular/common/http";
 })
 export class ListingService {
   getListings(): Observable<listing[]>{
-    return this.http.get<listing[]>('http://monster-marketplace-copy.cfapps.io/product-api/allListings')
+    return this.http.get<listing[]>('https://monster-marketplace-copy.cfapps.io/product-api/allListings')
   }
 
   addListing(item:listing): void {
@@ -19,7 +19,7 @@ export class ListingService {
   getListing(id: number): Observable<listing>{
     console.log(`fetched listing id = ${id}`);
     // return of(Listings.find(listing => listing.id === id) );
-    return this.http.get<listing>("http://monster-marketplace-copy.cfapps.io/product-api/listing/" + id);
+    return this.http.get<listing>("https://monster-marketplace-copy.cfapps.io/product-api/listing/" + id);
   }
 
   constructor(private http: HttpClient) { }
