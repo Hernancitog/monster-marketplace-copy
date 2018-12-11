@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders} from "@angular/common/http";
 })
 export class CategoryService {
   getCategories(): Observable<Category[]>{
-    return this.http.get<Category[]>('http://monster-marketplace-copy.cfapps.io/product-api/categories')
+    return this.http.get<Category[]>('https://monster-marketplace-copy.cfapps.io/product-api/categories')
   }
 
   constructor(private http: HttpClient) { }
