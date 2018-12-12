@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven:3-alpine'
+      args '-v /root/.m2:/root/.m2'
+    }
+  }
   stages {
     stage('Packaging') {
       when {
@@ -11,7 +16,7 @@ pipeline {
         script {
           try {
             sh 'echo run mvn package -DskipTests'
-            sh 'echo run mvn install -DskipTests'
+            sh 'mvn install -DskipTests'
           } catch(Exception e) {
             throw e
           }
