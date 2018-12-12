@@ -10,7 +10,9 @@ pipeline {
     }
   }
   
-  stage('Testing') {
+  stages {
+    
+    stage('Testing') {
       when {
         anyOf {
           branch 'master'
@@ -20,8 +22,7 @@ pipeline {
         sh 'echo "mvn test"'
       }
     }
-  
-  stages {
+    
     stage('Packaging') {
       when {
         anyOf {
