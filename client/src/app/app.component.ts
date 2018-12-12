@@ -10,6 +10,6 @@ export class AppComponent {
 
   constructor(private httpClient: HttpClientModule){}
 
-  title = 'your USF CAMPUS MARKETPLACE!!!';
+  title = 'your CAMPUS MARKETPLACE!!!';
 
 }
