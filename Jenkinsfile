@@ -7,15 +7,15 @@ pipeline {
           branch 'master'
         }
       }
-      agent {
-        docker {
-          image 'maven:3-alpine'
-          args '-v /root/.m2:/root/.m2'
-        }
-      }
       steps {
-        sh 'mvn -DskipTests clean package'
-        sh "mvn install -DskipTests"
+        script {
+          try {
+            sh 'mvn -DskipTests clean package'
+            sh "mvn install -DskipTests"
+          } catch(Exception e) {
+            throw e
+          }
+        }
       }
     }
     
