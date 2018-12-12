@@ -10,7 +10,7 @@ pipeline {
       steps {
         script {
           try {
-            sh 'mvn -DskipTests clean package'
+            sh 'echo run mvn -DskipTests clean package'
             sh "mvn install -DskipTests"
           } catch(Exception e) {
             throw e
