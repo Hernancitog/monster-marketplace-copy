@@ -15,6 +15,7 @@ pipeline {
       }
       steps {
         sh 'mvn -DskipTests clean package'
+        sh "mvn install -DskipTests"
       }
     }
     
