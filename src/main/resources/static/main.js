@@ -318,7 +318,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var AppComponent = /** @class */ (function () {
     function AppComponent(httpClient) {
         this.httpClient = httpClient;
-        this.title = 'your CAMPUS MARKETPLACE!!!';
+        this.title = 'your USF CAMPUS MARKETPLACE!!!';
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -494,7 +494,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  config works!\n</p>\n"
+module.exports = "<p>\r\n  config works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1916,7 +1916,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Herna\Desktop\git_lab_repo\monster-marketplace-copy\market\client\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Herna\Desktop\git_lab_repo\monster-marketplace-copy\client\src\main.ts */"./src/main.ts");
 
 
 /***/ })
