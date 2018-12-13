@@ -41,10 +41,23 @@ pipeline {
       }
     }
     
-    stage('Building image') {
+    stage('Building Container') {
+      when {
+        anyOf {
+          branch 'master'
+        }
+      }
       steps{
         script {
-          docker.build registry + ":$BUILD_NUMBER"
+          try {
+            sh "echo run docker build"
+            // ${env.DK_TAG_GOAL}
+            sh "mvn dockerfile:build@'tag-latest'"
+          } catch(Exception e){
+            // env.FAIL_STG='Docker Build'
+            // currentBuild.result='FAILURE'
+            throw e
+          }
         }
       }
     }
