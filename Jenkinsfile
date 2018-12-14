@@ -78,7 +78,7 @@ pipeline {
             // sh "echo push; mvn dockerfile:push"
             // testImage.push('latest')
             // sh "echo remove local image; docker image rm ${env.DK_U}/${env.IMG_NAME}:${env.DK_TAG}"
-            sh "echo push stage needs to be updated"
+            sh "echo push"
             docker.withRegistry( ‘’, registryCredential ) {
               dockerImage.push()
             }            
