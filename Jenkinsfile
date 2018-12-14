@@ -42,7 +42,7 @@ pipeline {
       }
     }
     
-    stage('Building Container') {
+    stage('Container Build') {
       when {
         anyOf {
           branch 'master'
@@ -51,7 +51,7 @@ pipeline {
       //agent {
       //  dockerfile true
       //}
-      steps{
+      steps {
         script {
           sh "echo run docker build"
           // mvn dockerfile:build@${env.DK_TAG_GOAL}
@@ -59,14 +59,30 @@ pipeline {
           // sh "mvn dockerfile:tag-latest"
           // def customImage = docker.build("my-image:latest")
           def testImage = docker.build("test-image")
-          testImage.inside {
-            sh 'make test'
+        }
+      }
+    }
+    
+    stage('Container Push') {
+      when {
+        anyOf {
+          branch 'master'
+        }
+      }
+      steps {
+        script {
+          try {
+            // sh "echo push; mvn dockerfile:push"
+            sh "echo push; testImage.push('latest')"
+            // sh "echo remove local image; docker image rm ${env.DK_U}/${env.IMG_NAME}:${env.DK_TAG}"
+          } catch(Exception e) {
+            throw e
           }
         }
       }
     }
     
-    stage('Deployment') {
+    stage('CF Push') {
       when {
         anyOf {
           branch 'master'
