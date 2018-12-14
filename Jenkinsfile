@@ -58,8 +58,9 @@ pipeline {
           // def customImage = docker.build("my-image:tag-latest")
           // sh "mvn dockerfile:tag-latest"
           // def customImage = docker.build("my-image:latest")
-          def testImage = docker.build("test-image")
-          testImage.push('latest')
+          // def testImage = docker.build("test-image")
+          docker.build(registry + ":$BUILD_NUMBER")
+          //testImage.push('latest')
         }
       }
     }
