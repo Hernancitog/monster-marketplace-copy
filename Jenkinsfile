@@ -58,8 +58,11 @@ pipeline {
             // mvn dockerfile:build@${env.DK_TAG_GOAL}
             // def customImage = docker.build("my-image:tag-latest")
             // sh "mvn dockerfile:tag-latest"
-            def customImage = docker.build("my-image:latest")
-            
+            // def customImage = docker.build("my-image:latest")
+            def testImage = docker.build("test-image", "./dockerfiles/test")
+            testImage.inside {
+              sh 'make test'
+            }            
           } catch(Exception e){
             // env.FAIL_STG='Docker Build'
             // currentBuild.result='FAILURE'
