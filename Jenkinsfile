@@ -79,7 +79,7 @@ pipeline {
             // testImage.push('latest')
             // sh "echo remove local image; docker image rm ${env.DK_U}/${env.IMG_NAME}:${env.DK_TAG}"
             sh "echo push"
-            docker.withRegistry( registry, registryCredential ) {
+            docker.withRegistry( "", registryCredential ) {
               dockerImage.push()
             }            
           } catch(Exception e) {
