@@ -3,9 +3,7 @@ pipeline {
     registry = "citopues/dockrep"
     registryCredential = 'dockerhub'
   }
-  agent {
-    dockerfile true
-  }
+  agent any
   
   stages {
     
@@ -26,6 +24,12 @@ pipeline {
           branch 'master'
         }
       }
+      agent {
+        docker {
+            image 'maven:3-alpine'
+            args '-v /root/.m2:/root/.m2'
+        }
+      }
       steps {
         script {
           try {
@@ -43,6 +47,9 @@ pipeline {
         anyOf {
           branch 'master'
         }
+      }
+      agent {
+        dockerfile true
       }
       steps{
         script {
