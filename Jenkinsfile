@@ -59,6 +59,7 @@ pipeline {
           // sh "mvn dockerfile:tag-latest"
           // def customImage = docker.build("my-image:latest")
           def testImage = docker.build("test-image")
+          testImage.push('latest')
         }
       }
     }
@@ -73,8 +74,8 @@ pipeline {
         script {
           try {
             // sh "echo push; mvn dockerfile:push"
-            sh "echo push"
-            testImage.push('latest')
+            sh "echo push stage needs to be updated"
+            // testImage.push('latest')
             // sh "echo remove local image; docker image rm ${env.DK_U}/${env.IMG_NAME}:${env.DK_TAG}"
           } catch(Exception e) {
             throw e
