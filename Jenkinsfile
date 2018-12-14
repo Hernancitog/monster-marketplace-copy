@@ -48,9 +48,9 @@ pipeline {
           branch 'master'
         }
       }
-      agent {
-        dockerfile true
-      }
+      //agent {
+      //  dockerfile true
+      //}
       steps{
         script {
           sh "echo run docker build"
