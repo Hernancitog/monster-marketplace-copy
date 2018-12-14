@@ -57,7 +57,9 @@ pipeline {
             sh "echo run docker build"
             // mvn dockerfile:build@${env.DK_TAG_GOAL}
             // def customImage = docker.build("my-image:tag-latest")
-            sh "mvn dockerfile:tag-latest"
+            // sh "mvn dockerfile:tag-latest"
+            def customImage = docker.build("my-image:latest")
+            
           } catch(Exception e){
             // env.FAIL_STG='Docker Build'
             // currentBuild.result='FAILURE'
