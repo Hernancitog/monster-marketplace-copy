@@ -9,11 +9,6 @@ pipeline {
   stages {
     
     stage('Testing') {
-      when {
-        anyOf {
-          branch 'master'
-        }
-      }
       agent {
         docker {
           image 'maven:3-alpine'
