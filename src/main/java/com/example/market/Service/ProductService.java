@@ -18,7 +18,7 @@ import com.example.market.Entity.Product;
 @Transactional
 public class ProductService {
 	@Autowired
-	ProductDao dao;
+	ProductDao productDao;
 
 	@Transactional
 	public Product getProduct(Integer id) {
@@ -26,7 +26,7 @@ public class ProductService {
 		// exception
 		// Using Optional is a better method of handling a null value from the
 		// database
-		Optional<Product> item = dao.findById(id);
+		Optional<Product> item = productDao.findById(id);
 		if (item.isPresent()) {
 			return item.get();
 		} else {
@@ -36,28 +36,28 @@ public class ProductService {
 
 	@Transactional
 	public List<Product> getAllProducts() {
-		return dao.findAll();
+		return productDao.findAll();
 	}
 
 	@Transactional
 	public List<Product> getProductBySeller(Member seller) {
-		return dao.findBySeller(seller);
+		return productDao.findBySeller(seller);
 	}
 
 	@Transactional
 	public List<Product> getProductByCategory(Category cat) {
-		return dao.findByCategory(cat);
+		return productDao.findByCategory(cat);
 	}
 
 	@Transactional
 	public void deleteProduct(Integer id) {
 
-		dao.deleteById(id);
+		productDao.deleteById(id);
 	}
 
 	@Transactional
 	public Integer updateProduct(Product item) {
-		Optional<Product> product = dao.findById(item.getId());
+		Optional<Product> product = productDao.findById(item.getId());
 
 		try {
 			if (product.isPresent()) {
@@ -93,7 +93,7 @@ public class ProductService {
 						item.setTitle(product.get().getTitle());
 					}
 					
-					dao.save(item);
+					productDao.save(item);
 					return 200;
 				}
 			} else {
@@ -107,7 +107,7 @@ public class ProductService {
 	@Transactional
 	public Integer createProduct(Product item) {
 		System.out.println("This is my product : " + item);
-		return dao.save(item).getId();
+		return productDao.save(item).getId();
 	}
 
 }
